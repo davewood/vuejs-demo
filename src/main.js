@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
 import 'vue-awesome/icons/flag' // import used icons to minimize build size
 import Icon from 'vue-awesome/components/Icon'
+import i18n from './i18n.js'
 
 Vue.use(BootstrapVue);
 
@@ -19,5 +20,6 @@ new Vue({
   el: '#app',
   store,
   router,
+  i18n,
   render: h => h(App)
 })

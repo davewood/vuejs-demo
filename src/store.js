@@ -4,9 +4,10 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  strict: true,
   state: {
     username: '',
-    notifications: []
+    notifications: [],
   },
   mutations: {
     update_auth: function (state, payload) {
@@ -15,6 +16,6 @@ export default new Vuex.Store({
     add_notification: function (state, payload) {
       state.notifications.push(payload.msg);
       setTimeout( function() { state.notifications.shift() }, 5000 );
-    }
+    },
   }
 });

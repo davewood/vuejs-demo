@@ -1,10 +1,12 @@
 <template>
-  <div>foo<icon name="flag"></icon></div>
+  <div @click='foo'>{{ $t("message.hello") }} <icon name="flag"></icon></div>
 </template>
 
 <script>
 export default {
   name: 'Foo',
-  created: function() { this.$notify('foo'); }
+  methods: {
+    'foo': function() { this.$notify('foo'); }
+  }
 }
 </script>
