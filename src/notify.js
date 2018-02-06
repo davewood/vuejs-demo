@@ -6,7 +6,7 @@ import { mapState } from 'vuex';
 // for installation in #app
 
 const component = {
-  template: '<div><div v-for="n in notifications">{{ n }}</div></div>',
+  template: '<div><b-alert show v-for="n in notifications">{{ n }}</b-alert></div>',
   computed: mapState(['notifications']),
 };
 

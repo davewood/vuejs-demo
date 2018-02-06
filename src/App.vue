@@ -1,15 +1,14 @@
 <template>
-  <div id="app">
-    <notify></notify>
-    <img src="./assets/logo.png">
-    <router-link to="/foo">foo</router-link>
-    <h1>{{ msg }}</h1>
-    <router-view></router-view>
-  </div>
+<b-container fluid id="app">
+  <notify id="notify"></notify>
+  <img src="./assets/logo.png">
+  <router-link to="/foo">foo</router-link>
+  <h1>{{ msg }}</h1>
+  <router-view></router-view>
+</b-container>
 </template>
 
 <script>
-
 import Foo from './Foo.vue'
 
 export default {
@@ -26,4 +25,11 @@ export default {
 </script>
 
 <style scoped>
+#notify {
+    width: 200px;
+    position: fixed;
+    top: 60px;
+    right: 25px;
+    z-index: 1001;
+}
 </style>
