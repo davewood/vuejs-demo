@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <notify></notify>
     <img src="./assets/logo.png">
     <router-link to="/foo">foo</router-link>
     <h1>{{ msg }}</h1>
@@ -10,6 +11,7 @@
 <script>
 
 import Foo from './Foo.vue'
+
 export default {
   name: 'app',
   data () {
@@ -19,7 +21,7 @@ export default {
   },
   components: {
     'foo': Foo
-  }
+  },
 }
 </script>
 
