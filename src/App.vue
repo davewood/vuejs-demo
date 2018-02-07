@@ -38,7 +38,7 @@ export default {
     }
   },
   watch: {
-    locale: function(val) { this.$i18n.locale = val; this.$notify('switched to: '+val); }
+    locale: function(val) { this.$i18n.locale = val; this.$notify('switch to: ' + val); }
   },
   components: {
     'foo': Foo,

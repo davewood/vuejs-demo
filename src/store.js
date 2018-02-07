@@ -15,7 +15,10 @@ export default new Vuex.Store({
     },
     add_notification: function (state, payload) {
       state.notifications.push(payload.msg);
-      setTimeout( function() { state.notifications.shift() }, 5000 );
+      setTimeout( () => this.commit('rm_notification'), 5000 );
+    },
+    rm_notification: function (state) {
+      state.notifications.shift();
     },
   }
 });
