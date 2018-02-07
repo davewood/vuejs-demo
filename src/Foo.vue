@@ -1,5 +1,5 @@
 <template>
-  <div @click='foo'>{{ $t("message.hello") }} <icon name="flag"></icon></div>
+  <div @click='foo'>{{ $t("message.hello", ['foo']) }} <icon name="flag"></icon></div>
 </template>
 
 <script>

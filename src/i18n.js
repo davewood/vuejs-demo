@@ -4,13 +4,15 @@ Vue.use(VueI18n)
 
 const messages = {
   de: {
+    welcome: 'Willkommen zur VueJS Demo',
     message: {
-      hello: 'hallo welt'
+      hello: 'hallo {0}'
     }
   },
   en: {
+    welcome: 'Welcome to VueJS Demo',
     message: {
-      hello: 'hello world'
+      hello: 'hello {0}'
     }
   }
 };
