@@ -11,10 +11,14 @@
     </b-navbar-nav>
 
     <b-navbar-nav class="ml-auto">
-      <b-nav-item-dropdown :text="locale" right>
-        <b-dropdown-item @click="locale = 'de'">de</b-dropdown-item>
-        <b-dropdown-item @click="locale = 'en'">en</b-dropdown-item>
-      </b-nav-item-dropdown>
+      <b-button-group>
+        <b-button
+          v-for="(lang,i) in ['en','de']" :key="i"
+          :class="{active: $i18n.locale === lang}"
+          @click="$i18n.locale = lang; ">
+          {{ lang }}
+        </b-button>
+      </b-button-group>
     </b-navbar-nav>
 
   </b-navbar>
@@ -32,21 +36,11 @@ import Bar from './Bar.vue'
 
 export default {
   name: 'app',
-  data () {
-    return {
-      locale: 'de',
-    }
-  },
-  watch: {
-    locale: function(val) {
-      this.$i18n.locale = val;
-      this.$notify('switch to: ' + val);
-    }
-  },
   components: {
     'foo': Foo,
     'bar': Bar,
   },
+  watch: { '$i18n.locale': function(val){this.$notify('switched to "'+val+'"')} }
 }
 </script>
 
@@ -57,8 +51,5 @@ export default {
     top: 60px;
     right: 25px;
     z-index: 1001;
-}
-#select-locale {
-    width: 100px;
 }
 </style>
